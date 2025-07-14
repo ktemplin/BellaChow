@@ -53,3 +53,7 @@ A subscription model will be available for users with better financial resources
 ## Contributing
 
 *(This section will be filled out as the project develops)*
+
+## License
+
+This project is proprietary and not open source. See the [LICENSE.md](LICENSE.md) file for details.
