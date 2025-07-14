@@ -41,8 +41,9 @@ A subscription model will be available for users with better financial resources
 
 ## Tech Stack (Proposed)
 
+*   **Hosting:** AWS
 *   **Frontend:** React / Next.js, TypeScript, Tailwind CSS
-*   **Backend:** Node.js / Python, Express / FastAPI, PostgreSQL / MongoDB
+*   **Backend:** Node.js / Python, Express / FastAPI, CockroachDB
 *   **Scraping:** Puppeteer / Playwright, Cheerio
 *   **AI/ML:** OpenAI API / Hugging Face for recipe suggestions
 
