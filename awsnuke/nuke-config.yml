@@ -1,0 +1,9 @@
+regions:
+- eu-west-2
+- global
+
+account-blocklist:
+- "999999999999" # production
+
+accounts:
+  "965087335223"

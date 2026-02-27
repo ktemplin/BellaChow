@@ -21,6 +21,7 @@ const Page: FC = () => {
   const [showSpecials, setShowSpecials] = useState(false);
   const [groceryList, setGroceryList] = useState<string[]>([]);
   const [newItem, setNewItem] = useState("");
+  const [specials, setSpecials] = useState<any[]>([]);
 
   useEffect(() => {
     if (typeof window !== "undefined" && window.location.protocol !== "https:") {
@@ -101,6 +102,19 @@ const Page: FC = () => {
     }
   };
 
+  useEffect(() => {
+    if (selectedStore && showSpecials) {
+      fetchFlyers(selectedStore.name).then(setSpecials);
+    }
+  }, [selectedStore, showSpecials]);
+
+  // Example: fetch flyer items for a location
+  const fetchFlyers = async (location: string) => {
+    const res = await fetch(`/api/flyers?location=${encodeURIComponent(location)}`);
+    const data = await res.json();
+    return data.items; // array of flyer items
+  };
+
   // Pagination logic
   const pageSize = 10;
   const totalPages = Math.ceil(stores.length / pageSize);
@@ -178,7 +192,15 @@ const Page: FC = () => {
             {showSpecials ? (
               <div>
                 <h3 className="font-semibold mb-2">Store Specials</h3>
-                <div className="text-black text-sm mb-2">Specials data coming soon.</div>
+                {specials.length > 0 ? (
+                  <ul className="list-disc pl-5 text-sm">
+                    {specials.map((item, idx) => (
+                      <li key={idx}>{item.name} - {item.price}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <div className="text-black text-sm mb-2">No specials found for this store.</div>
+                )}
               </div>
             ) : (
               <div>

@@ -4,32 +4,35 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
+    "dev:backend": "uvicorn src.app.flyer_api:app --reload --port 8000",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "dependencies": "^0.0.1",
     "leaflet": "^1.9.4",
-    "next": "15.4.1",
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
+    "next": "16.1.6",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
     "react-leaflet": "^5.0.0"
   },
   "devDependencies": {
-    "@aws-amplify/backend": "^1.16.1",
-    "@aws-amplify/backend-cli": "^1.8.0",
+    "@aws-amplify/backend": "^1.21.0",
+    "@aws-amplify/backend-cli": "^1.8.2",
     "@eslint/eslintrc": "^3",
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
+    "@tailwindcss/postcss": "^4.2.1",
+    "@types/node": "^25",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "aws-cdk-lib": "^2.189.1",
-    "constructs": "^10.4.2",
-    "esbuild": "^0.25.6",
-    "eslint": "^9",
-    "eslint-config-next": "15.4.1",
-    "tailwindcss": "^4",
-    "tsx": "^4.20.3",
-    "typescript": "^5.8.3"
+    "aws-cdk-lib": "^2.240.0",
+    "baseline-browser-mapping": "^2.10.0",
+    "constructs": "^10.5.1",
+    "esbuild": "^0.27.3",
+    "eslint": "^10",
+    "eslint-config-next": "16.1.6",
+    "tailwindcss": "^4.2.1",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
   }
 }

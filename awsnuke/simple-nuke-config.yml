@@ -1,0 +1,12 @@
+regions:
+  - global
+  - us-east-1
+  - us-west-1 
+  - us-west-2
+
+blocklist:
+  - "111111111111"
+
+accounts:
+  "965087335223":
+    filters: {}
